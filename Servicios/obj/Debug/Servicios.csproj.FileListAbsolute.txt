@@ -1,0 +1,15 @@
+C:\Users\Usuario\source\repos\CrudPract\Servicios\bin\Debug\Servicios.dll.config
+C:\Users\Usuario\source\repos\CrudPract\Servicios\bin\Debug\Servicios.dll
+C:\Users\Usuario\source\repos\CrudPract\Servicios\bin\Debug\Servicios.pdb
+C:\Users\Usuario\source\repos\CrudPract\Servicios\bin\Debug\Datos.dll
+C:\Users\Usuario\source\repos\CrudPract\Servicios\bin\Debug\EntityFramework.dll
+C:\Users\Usuario\source\repos\CrudPract\Servicios\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Usuario\source\repos\CrudPract\Servicios\bin\Debug\Datos.pdb
+C:\Users\Usuario\source\repos\CrudPract\Servicios\bin\Debug\Datos.dll.config
+C:\Users\Usuario\source\repos\CrudPract\Servicios\bin\Debug\EntityFramework.xml
+C:\Users\Usuario\source\repos\CrudPract\Servicios\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Usuario\source\repos\CrudPract\Servicios\obj\Debug\Servicios.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\CrudPract\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\CrudPract\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+C:\Users\Usuario\source\repos\CrudPract\Servicios\obj\Debug\Servicios.dll
+C:\Users\Usuario\source\repos\CrudPract\Servicios\obj\Debug\Servicios.pdb

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MedicalConsultationsAppModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Profesores">
+          <Key>
+            <PropertyRef Name="ProfesoresId" />
+          </Key>
+          <Property Name="ProfesoresId" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="int" Nullable="false" />
+          <Property Name="Area" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="SP_DELETE_Profesores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProfesoresId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_INSERTA_Profesores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProfesoresId" Type="int" Mode="In" />
+          <Parameter Name="Codigo" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido" Type="varchar" Mode="In" />
+          <Parameter Name="FechaNacimiento" Type="int" Mode="In" />
+          <Parameter Name="Area" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_SELECT_Profesores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPU_UPDATE_Profesores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProfesoresId" Type="int" Mode="In" />
+          <Parameter Name="Codigo" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido" Type="varchar" Mode="In" />
+          <Parameter Name="FechaNacimiento" Type="int" Mode="In" />
+          <Parameter Name="Area" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="MedicalConsultationsAppModel1StoreContainer">
+          <EntitySet Name="Profesores" EntityType="Self.Profesores" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MedicalConsultationsAppModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Profesores">
+          <Key>
+            <PropertyRef Name="ProfesoresId" />
+          </Key>
+          <Property Name="ProfesoresId" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="Int32" Nullable="false" />
+          <Property Name="Area" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MedicalConsultationsAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Profesores" EntityType="Self.Profesores" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MedicalConsultationsAppModel1StoreContainer" CdmEntityContainer="MedicalConsultationsAppEntities">
+          <EntitySetMapping Name="Profesores">
+            <EntityTypeMapping TypeName="MedicalConsultationsAppModel1.Profesores">
+              <MappingFragment StoreEntitySet="Profesores">
+                <ScalarProperty Name="ProfesoresId" ColumnName="ProfesoresId" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

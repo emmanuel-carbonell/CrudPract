@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedicalConsultationsAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__EFMigrationsHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoleClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRoleClaims" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="NormalizedName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetRoleClaims" Relationship="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRoles" ToRole="AspNetRoleClaims" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="NormalizedUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="NormalizedEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEnd" Type="DateTimeOffset" Precision="7" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetUserTokens" Relationship="Self.FK_AspNetUserTokens_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserTokens" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="AspNetUserTokens">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginProvider" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserTokens_AspNetUsers_UserId" FromRole="AspNetUserTokens" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="Profesores">
+    <Key>
+      <PropertyRef Name="ProfesoresId" />
+    </Key>
+    <Property Name="ProfesoresId" Type="Int32" Nullable="false" />
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="Int32" Nullable="false" />
+    <Property Name="Area" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTUDIANTE">
+    <Key>
+      <PropertyRef Name="EstudianteId" />
+    </Key>
+    <Property Name="EstudianteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Edad" Type="Int32" />
+    <Property Name="FechaNacimiento" Type="Int32" />
+    <Property Name="Matricula" Type="Int32" />
+    <Property Name="Provincia" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_AspNetRoleClaims_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetRoleClaims" Type="Self.AspNetRoleClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetRoleClaims">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserClaims_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserLogins_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserTokens_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserTokens" Type="Self.AspNetUserTokens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserTokens">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="MedicalConsultationsAppEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__EFMigrationsHistory" EntityType="Self.C__EFMigrationsHistory" />
+    <EntitySet Name="AspNetRoleClaims" EntityType="Self.AspNetRoleClaims" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+    <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserTokens" />
+    <EntitySet Name="Profesores" EntityType="Self.Profesores" />
+    <EntitySet Name="ESTUDIANTE" EntityType="Self.ESTUDIANTE" />
+    <AssociationSet Name="FK_AspNetRoleClaims_AspNetRoles_RoleId" Association="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetRoleClaims" EntitySet="AspNetRoleClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_UserId" Association="Self.FK_AspNetUserClaims_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers_UserId" Association="Self.FK_AspNetUserLogins_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserTokens_AspNetUsers_UserId" Association="Self.FK_AspNetUserTokens_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserTokens" EntitySet="AspNetUserTokens" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <FunctionImport Name="SP_DELETE_ESTUDIANTE">
+      <Parameter Name="EstudianteId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DELETE_Profesores">
+      <Parameter Name="ProfesoresId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INSERTA_ESTUDIANTE" ReturnType="Collection(Decimal)">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Edad" Mode="In" Type="Int32" />
+      <Parameter Name="Matricula" Mode="In" Type="Int32" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Provincia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INSERTA_Profesores" ReturnType="Collection(Decimal)">
+      <Parameter Name="Codigo" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Area" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SELECT_ESTUDIANTE" ReturnType="Collection(MedicalConsultationsAppModel.SP_SELECT_ESTUDIANTE_Result)" />
+    <FunctionImport Name="SP_SELECT_Profesores" ReturnType="Collection(MedicalConsultationsAppModel.SP_SELECT_Profesores_Result)" />
+    <FunctionImport Name="SPU_UPDATE_ESTUDIANTE">
+      <Parameter Name="EstudianteId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Edad" Mode="In" Type="Int32" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Matricula" Mode="In" Type="Int32" />
+      <Parameter Name="Provincia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPU_UPDATE_Profesores">
+      <Parameter Name="ProfesoresId" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Area" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="EmpleadosAdm" EntityType="MedicalConsultationsAppModel.EmpleadosAdm" />
+    <FunctionImport Name="SP_DELETE_EmpleadosAdm">
+      <Parameter Name="EmpleadosAdmId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INSERTA_EmpleadosAdm" ReturnType="Collection(Decimal)">
+      <Parameter Name="Codigo" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="String" />
+      <Parameter Name="Departamento" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SELECT_EmpleadosAdm" ReturnType="Collection(MedicalConsultationsAppModel.SP_SELECT_EmpleadosAdm_Result)" />
+    <FunctionImport Name="SPU_UPDATE_EmpleadosaAdm">
+      <Parameter Name="EmpleadosAdmId" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="String" />
+      <Parameter Name="Departamento" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPU_UPDATE_EmpleadosAdm">
+      <Parameter Name="EmpleadosAdmId" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="String" />
+      <Parameter Name="Departamento" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Aulas" EntityType="MedicalConsultationsAppModel.Aulas" />
+    <FunctionImport Name="SP_DELETE_Aulas">
+      <Parameter Name="AulasId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INSERTA_Aulas" ReturnType="Collection(Decimal)">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Capacidad" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SELECT_Aulas" ReturnType="Collection(MedicalConsultationsAppModel.SP_SELECT_Aulas_Result)" />
+    <FunctionImport Name="SPU_UPDATE_Aulas">
+      <Parameter Name="AulasId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Capacidad" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Areas" EntityType="MedicalConsultationsAppModel.Areas" />
+    <EntitySet Name="Departamentos" EntityType="MedicalConsultationsAppModel.Departamentos" />
+    <EntitySet Name="Provincias" EntityType="MedicalConsultationsAppModel.Provincias" />
+  </EntityContainer>
+  <ComplexType Name="SP_SELECT_ESTUDIANTE_Result">
+    <Property Type="Int32" Name="EstudianteId" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Edad" Nullable="true" />
+    <Property Type="Int32" Name="FechaNacimiento" Nullable="true" />
+    <Property Type="Int32" Name="Matricula" Nullable="true" />
+    <Property Type="Int32" Name="Provincia" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_SELECT_Profesores_Result">
+    <Property Type="Int32" Name="ProfesoresId" Nullable="false" />
+    <Property Type="Int32" Name="Codigo" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="FechaNacimiento" Nullable="false" />
+    <Property Type="Int32" Name="Area" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="EmpleadosAdm">
+    <Key>
+      <PropertyRef Name="EmpleadosAdmId" />
+    </Key>
+    <Property Name="EmpleadosAdmId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNacimiento" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Departamento" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SP_SELECT_EmpleadosAdm_Result">
+    <Property Type="Int32" Name="EmpleadosAdmId" Nullable="false" />
+    <Property Type="Int32" Name="Codigo" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="FechaNacimiento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <EntityType Name="Aulas">
+    <Key>
+      <PropertyRef Name="AulasId" />
+    </Key>
+    <Property Name="AulasId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidad" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SP_SELECT_Aulas_Result">
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Capacidad" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <EntityType Name="Areas">
+    <Key>
+      <PropertyRef Name="AreasId" />
+    </Key>
+    <Property Name="AreasId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Departamentos">
+    <Key>
+      <PropertyRef Name="DepartamentosId" />
+    </Key>
+    <Property Name="DepartamentosId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Provincias">
+    <Key>
+      <PropertyRef Name="ProvinciaId" />
+    </Key>
+    <Property Name="ProvinciaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

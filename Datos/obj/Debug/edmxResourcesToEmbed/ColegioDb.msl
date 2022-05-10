@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MedicalConsultationsAppModelStoreContainer" CdmEntityContainer="MedicalConsultationsAppEntities">
+    <EntitySetMapping Name="C__EFMigrationsHistory">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.C__EFMigrationsHistory">
+        <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoleClaims">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.AspNetRoleClaims">
+        <MappingFragment StoreEntitySet="AspNetRoleClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NormalizedName" ColumnName="NormalizedName" />
+          <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="ProviderDisplayName" ColumnName="ProviderDisplayName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="NormalizedUserName" ColumnName="NormalizedUserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NormalizedEmail" ColumnName="NormalizedEmail" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEnd" ColumnName="LockoutEnd" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserTokens">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.AspNetUserTokens">
+        <MappingFragment StoreEntitySet="AspNetUserTokens">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profesores">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.Profesores">
+        <MappingFragment StoreEntitySet="Profesores">
+          <ScalarProperty Name="ProfesoresId" ColumnName="ProfesoresId" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTUDIANTE">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.ESTUDIANTE">
+        <MappingFragment StoreEntitySet="ESTUDIANTE">
+          <ScalarProperty Name="EstudianteId" ColumnName="EstudianteId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="MedicalConsultationsAppModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="SP_DELETE_ESTUDIANTE" FunctionName="MedicalConsultationsAppModel.Store.SP_DELETE_ESTUDIANTE" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE_Profesores" FunctionName="MedicalConsultationsAppModel.Store.SP_DELETE_Profesores" />
+    <FunctionImportMapping FunctionImportName="SP_INSERTA_ESTUDIANTE" FunctionName="MedicalConsultationsAppModel.Store.SP_INSERTA_ESTUDIANTE" />
+    <FunctionImportMapping FunctionImportName="SP_INSERTA_Profesores" FunctionName="MedicalConsultationsAppModel.Store.SP_INSERTA_Profesores" />
+    <FunctionImportMapping FunctionImportName="SP_SELECT_ESTUDIANTE" FunctionName="MedicalConsultationsAppModel.Store.SP_SELECT_ESTUDIANTE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MedicalConsultationsAppModel.SP_SELECT_ESTUDIANTE_Result">
+          <ScalarProperty Name="EstudianteId" ColumnName="EstudianteId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SELECT_Profesores" FunctionName="MedicalConsultationsAppModel.Store.SP_SELECT_Profesores">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MedicalConsultationsAppModel.SP_SELECT_Profesores_Result">
+          <ScalarProperty Name="ProfesoresId" ColumnName="ProfesoresId" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPU_UPDATE_ESTUDIANTE" FunctionName="MedicalConsultationsAppModel.Store.SPU_UPDATE_ESTUDIANTE" />
+    <FunctionImportMapping FunctionImportName="SPU_UPDATE_Profesores" FunctionName="MedicalConsultationsAppModel.Store.SPU_UPDATE_Profesores" />
+    <EntitySetMapping Name="EmpleadosAdm">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.EmpleadosAdm">
+        <MappingFragment StoreEntitySet="EmpleadosAdm">
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="EmpleadosAdmId" ColumnName="EmpleadosAdmId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_DELETE_EmpleadosAdm" FunctionName="MedicalConsultationsAppModel.Store.SP_DELETE_EmpleadosAdm" />
+    <FunctionImportMapping FunctionImportName="SP_INSERTA_EmpleadosAdm" FunctionName="MedicalConsultationsAppModel.Store.SP_INSERTA_EmpleadosAdm" />
+    <FunctionImportMapping FunctionImportName="SP_SELECT_EmpleadosAdm" FunctionName="MedicalConsultationsAppModel.Store.SP_SELECT_EmpleadosAdm">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MedicalConsultationsAppModel.SP_SELECT_EmpleadosAdm_Result">
+          <ScalarProperty Name="EmpleadosAdmId" ColumnName="EmpleadosAdmId" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPU_UPDATE_EmpleadosAdm" FunctionName="MedicalConsultationsAppModel.Store.SPU_UPDATE_EmpleadosAdm" />
+    <EntitySetMapping Name="Aulas">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.Aulas">
+        <MappingFragment StoreEntitySet="Aulas">
+          <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="AulasId" ColumnName="AulasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_DELETE_Aulas" FunctionName="MedicalConsultationsAppModel.Store.SP_DELETE_Aulas" />
+    <FunctionImportMapping FunctionImportName="SP_INSERTA_Aulas" FunctionName="MedicalConsultationsAppModel.Store.SP_INSERTA_Aulas" />
+    <FunctionImportMapping FunctionImportName="SP_SELECT_Aulas" FunctionName="MedicalConsultationsAppModel.Store.SP_SELECT_Aulas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MedicalConsultationsAppModel.SP_SELECT_Aulas_Result">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPU_UPDATE_Aulas" FunctionName="MedicalConsultationsAppModel.Store.SPU_UPDATE_Aulas" />
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.Areas">
+        <MappingFragment StoreEntitySet="Areas">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="AreasId" ColumnName="AreasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamentos">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.Departamentos">
+        <MappingFragment StoreEntitySet="Departamentos">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="DepartamentosId" ColumnName="DepartamentosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provincias">
+      <EntityTypeMapping TypeName="MedicalConsultationsAppModel.Provincias">
+        <MappingFragment StoreEntitySet="Provincias">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ProvinciaId" ColumnName="ProvinciaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
